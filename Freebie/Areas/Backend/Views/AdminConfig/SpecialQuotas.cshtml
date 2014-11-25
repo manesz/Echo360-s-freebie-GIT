@@ -1,0 +1,192 @@
+﻿@model IEnumerable<Freebie.Models.Quota>
+@using PagedList.Mvc; 
+@using PagedList;
+@{
+    ViewBag.Title = "SpecialQuotas";
+    ViewBag.PageName = "ตั้งค่าโควต้าพิเศษ";
+    Layout = "~/Areas/Backend/Views/Shared/_Backend.cshtml";
+    string role_cd = (Session["Role"] == null) ? "" : Session["Role"].ToString();
+    bool has_permission = role_cd.Equals("AM");  
+}
+
+<div class="backend-table-title">
+	<span>ตั้งค่าโควต้าพิเศษ</span>   
+    @if (has_permission)
+    { 
+         @Html.ActionLink("สร้างใหม่", "NewSpecialQuota", "AdminConfig", null, new { style = "float:right;" })    
+    } 
+</div>
+@if (has_permission)
+{
+<div style="text-align:center;width:768px;">
+   <div style = "width:600px;margin: 20px auto;">
+       @using (Html.BeginForm("SpecialQuotas", "AdminConfig", FormMethod.Post, new { @id = "backend-search-cust-form", @class = "form-horizontal", style = "width:600px;" }))
+       {
+           <div class="control-group">
+				    <label class="control-label" for="First_Name" style="width: 120px;text-align:left;">
+					    ชื่อโควต้าพิเศษ:
+				    </label>
+				    <div class="controls" style= 'margin-left:120px;text-align:left;'>
+					    <input type = "text" name = "Quota_Desc" value = "@ViewBag.Name" autocomplete = "off" id = "search_Quota_Desc" style ="width:370px;"/>               
+				    </div>
+		    </div>
+            <div class = 'row-fluid'>
+                <div class = 'span5'>
+                    <div class="control-group">
+				            <label class="control-label" for="From_Start_Dttm" style="width: 120px;text-align:left;">
+					            วันที่เริ่มตั้งแต่:
+				            </label>
+				            <div class="controls" style= 'margin-left:120px;text-align:left;'>
+					            <input id="From_Start_Dttm" name="From_Start_Dttm" style="width: 80px;" type="text" value="@ViewBag.From_Start_Date" autocomplete="off" />               
+				            </div>
+		            </div>
+                </div>
+                <div class = 'span5'>
+                    <div class="control-group">
+				            <label class="control-label" for="From_End_Dttm" style="width: 120px;text-align:center;">
+					            ถึงวันที่:
+				            </label>
+				            <div class="controls" style= 'margin-left:120px;'>
+					            <input id="From_End_Dttm" name="From_End_Dttm" style="width: 80px;" type="text" value="@ViewBag.From_End_Date" autocomplete="off" />                  
+				            </div>
+		            </div>
+                </div>
+            </div>
+           <div class = 'row-fluid'>
+                <div class = 'span5'>
+                    <div class="control-group">
+				            <label class="control-label" for="To_Start_Dttm" style="width: 120px;text-align:left;">
+					            วันที่สิ้นสุดตั้งแต่:
+				            </label>
+				            <div class="controls" style= 'margin-left:120px;text-align:left;'>
+					            <input id="To_Start_Dttm" name="To_Start_Dttm" style="width: 80px;" type="text" value="@ViewBag.To_Start_Date" autocomplete="off" />               
+				            </div>
+		            </div>
+                </div>
+                <div class = 'span5'>
+                    <div class="control-group">
+				            <label class="control-label" for="To_End_Dttm" style="width: 120px;text-align:center;">
+					            ถึงวันที่:
+				            </label>
+				            <div class="controls" style= 'margin-left:120px;'>
+					            <input id="To_End_Dttm" name="To_End_Dttm" style="width: 80px;" type="text" value="@ViewBag.To_End_Date" autocomplete="off" />                  
+				            </div>
+		            </div>
+                </div>
+            </div>
+           <div class="control-group">
+				    <label class="control-label" for="First_Name" style="width: 120px;text-align:left;">
+					    สถานะ:
+				    </label>
+				    <div class="controls" style= 'margin-left:120px;text-align:left;'>
+					      @Html.DropDownList("Status_Cd", null, new { @style = "width:385px;" })         
+				    </div>
+		    </div>
+           <div style="text-align:center;">
+                <input type="submit" class="btn btn-primary btn-blue" value="ค้นหา"/>
+           </div>
+       }
+       @if (!string.IsNullOrWhiteSpace(ViewBag.Error))
+       { 
+        <div style="width:400px;margin:20px;color:Red;text-align:center;">
+            <p>@ViewBag.Error</p>
+        </div>
+       }
+   </div>
+</div>
+<div style="margin: 20px 20px 0 0;">
+    <table class="border-table" style="width:780px;text-align:center;">
+        <thead>
+                <tr style="background:#00EEDD;">
+                    <th style="width:80px;">ลำดับที่</th>
+                    <th style="width:120px;">รหัสโควต้า</th>
+                    <th style="width:120px;">ชื่อโควต้าพิเศษ</th>
+                    <th style="width:120px;">วันที่เริ่มใช้งาน</th>
+                    <th style="width:120px;">ถึงวันที่</th>
+                    <th style="width:100px;">สถานะ</th>
+                    <th style="width:120px;">&nbsp;</th>
+                </tr>
+        </thead>
+        @{var count = 1;}
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@(count + ((ViewBag.PageNumber - 1) * ViewBag.PageSize))</td>
+                    <td>@item.Quota_Cd</td>
+                    <td>@item.Quota_Desc</td>
+                    <td>@String.Format("{0:dd/MM/yyyy}", item.Start_Dttm)</td>
+                    <td>@String.Format("{0:dd/MM/yyyy}", item.End_Dttm)</td>
+                    <td>@item.Status</td>
+                    <td>
+                         @Html.ActionLink("ดูรายละเอียด", "ViewSpecialQuota", "AdminConfig", new { quota_cd = item.Quota_Cd }, new { })    
+                         @*@Html.ActionLink("ลบ", "RemoveSpecialQuota", "AdminConfig", new { quota_cd = item.Quota_Cd }, new { onclick = "return confirm('ยืนยันการลบโควต้าพิเศษใช่หรือไม่?');" })    *@
+                    </td>
+                </tr>
+                count++;
+            }
+        </tbody>
+    </table>
+     @Html.PagedListPager((IPagedList)ViewBag.PageQuotas, page => Url.Action("SpecialQuotas", new { page = page }))
+</div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#From_Start_Dttm').css('width', '80px');
+            $('#From_End_Dttm').css('width', '80px');
+            $('#To_Start_Dttm').css('width', '80px');
+            $('#To_End_Dttm').css('width', '80px');
+
+            //var jq = $.noConflict();
+            $.datepicker.regional['th'] = {
+                closeText: 'ปิด',
+                prevText: '&#xAB;&#xA0;ย้อน',
+                nextText: 'ถัดไป&#xA0;&#xBB;',
+                currentText: 'วันนี้',
+                monthNames: ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน',
+		'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'],
+                monthNamesShort: ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.',
+		'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'],
+                dayNames: ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์'],
+                dayNamesShort: ['อา.', 'จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.'],
+                dayNamesMin: ['อา.', 'จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.'],
+                weekHeader: 'Wk',
+                dateFormat: 'dd/mm/yy',
+                firstDay: 0,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: ''
+            };
+            $.datepicker.setDefaults($.datepicker.regional['th']);
+            $("#From_Start_Dttm").datepicker({
+                showOn: "button",
+                dateFormat: "dd/mm/yy",
+                buttonImage: '@Url.Content("~/Images/calendar.gif")',
+                buttonImageOnly: true
+            });
+            $("#From_End_Dttm").datepicker({
+                showOn: "button",
+                dateFormat: "dd/mm/yy",
+                buttonImage: '@Url.Content("~/Images/calendar.gif")',
+                buttonImageOnly: true
+            });
+            $("#To_Start_Dttm").datepicker({
+                showOn: "button",
+                dateFormat: "dd/mm/yy",
+                buttonImage: '@Url.Content("~/Images/calendar.gif")',
+                buttonImageOnly: true
+            });
+            $("#To_End_Dttm").datepicker({
+                showOn: "button",
+                dateFormat: "dd/mm/yy",
+                buttonImage: '@Url.Content("~/Images/calendar.gif")',
+                buttonImageOnly: true
+            });
+            $('.ui-datepicker-trigger').css('margin-left', '5px');
+        })
+</script>
+}
+else
+{ 
+    @Html.Partial("~/Views/Statics/PermissionDenied.cshtml")
+}

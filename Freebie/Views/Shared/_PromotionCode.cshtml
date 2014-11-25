@@ -1,0 +1,45 @@
+﻿<div class="register-step-container Shadow" style="width: 190px;height: 160px;margin-top: 20px;">
+    <div class="register-step-quota-text center-text" style = "top: 20px !important;">
+        <div style="margin-bottom:20px;"><p>Promotion Code:</p></div>
+            <form>
+                <input type ="text" id = "register-user-promotion-code" value = "@ViewBag.PM_Code" maxlength="15" name = "Promotion_Code_Value" style ="width:140px;"/>
+                <input type ="submit" id = "register-user-submit-promotion-code" value = "ตรวจสอบ" class = "btn btn-primary btn-blue"/>
+            </form>
+    </div>
+</div>
+
+<div style = "padding: 10px 0;color: #30C030;">
+     <p style = "text-align: left;" id = "register-user-special-quota-desc"></p>
+</div>
+<script type = "text/javascript">
+    $(document).ready(function () {
+
+        $('#register-user-promotion-code').blur(function (e) {
+            var code_value = $('#register-user-promotion-code').val();
+            $('#Promotion_Code_Value').val(code_value);
+        });
+
+        $('#register-user-submit-promotion-code').click(function (e) {
+            var code_value = $('#register-user-promotion-code').val();
+            $.ajax({
+                url: 'GetDesc',
+                method: 'POST',
+                dataType: 'json',
+                data: { code_value: code_value }
+            }).done(function (result) {
+                var result_type = result.Result;
+                var result_string = result.ResultString;
+                $('#Promotion_Code_Value').val(code_value);
+                $('#Click_Confirm').val("Y");
+                if (result_type == 0) {
+                    $('#register-user-special-quota-desc').addClass("red-text");
+                }
+                else {
+                    $('#register-user-special-quota-desc').removeClass("red-text");
+                }
+                $('#register-user-special-quota-desc').html(result_string);
+            });
+            return false;
+        });
+    })
+</script>

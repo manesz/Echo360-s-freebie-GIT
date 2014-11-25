@@ -1,0 +1,111 @@
+﻿@using Freebie.Libs;
+@model Freebie.Models.PromotionCode
+@{
+    ViewBag.Title = "NewSpecialQuota";
+    ViewBag.PageName = "ตั้งค่า Promotion Code";
+    Layout = "~/Areas/Backend/Views/Shared/_Backend.cshtml";
+    string role_cd = (Session["Role"] == null) ? "" : Session["Role"].ToString();
+    bool has_permission = role_cd.Equals("AM");  
+}
+<div class="backend-table-title">
+	<span>ข้อมูล Promotion Code</span>   
+     @if (has_permission)
+     { 
+         @Html.ActionLink("แก้ไข", "EditPromotionCode", "AdminConfig", new { edit_promotion_cd = Model.Promotion_Cd }, new { style = "float:right;" })    
+     }  
+</div>
+<div style="margin: 20px 20px 0 20px;">
+    @using (Html.BeginForm("NewPromotionCode", "AdminConfig", FormMethod.Post, new { @id = "backend-special-quota-form", @class = "form-horizontal", style = "width:700px;" }))
+    {
+
+        <div class="control-group">
+				<label class="control-label" for="Quota_Cd" style="width: 120px;text-align:left;">
+					Promotion Code:
+				</label>
+				<div class="controls" style= 'margin-left:120px;'>
+					@Html.TextBox("Promotion_Code_Value", null, new { @readonly = "readonly" })                   
+				</div>
+		</div>
+        <div class="control-group">
+				<label class="control-label" for="Quota_Desc" style="width: 120px;text-align:left;">
+					คำอธิบาย:
+				</label>
+				<div class="controls" style= 'margin-left:120px;'>
+					@Html.TextArea("Promotion_Desc", null, new { style = "width:400px;height: 100px;", @readonly = "readonly" })                   
+				</div>
+		</div>
+        <div class = 'row-fluid'>
+            <div class = 'span5'>
+                <div class="control-group">
+				        <label class="control-label" for="Start_Dttm" style="width: 120px;text-align:left;">
+					        วันที่เริ่มใช้งาน:
+				        </label>
+				        <div class="controls" style= 'margin-left:120px;'>
+					        @Html.TextBox("Start_Dttm", String.Format("{0:dd/MM/yyyy}", Model.Start_Dttm), new { style = "width:80px;", @readonly = "readonly" })                    
+				        </div>
+		        </div>
+            </div>
+            <div class = 'span5'>
+                <div class="control-group">
+				        <label class="control-label" for="End_Dttm" style="width: 120px;text-align:center;">
+					        ถึงวันที่:
+				        </label>
+				        <div class="controls" style= 'margin-left:120px;'>
+					        @Html.TextBox("End_Dttm", String.Format("{0:dd/MM/yyyy}", Model.End_Dttm), new { style = "width:80px;", @readonly = "readonly" })                       
+				        </div>
+		        </div>
+            </div>
+        </div>
+        <div class="control-group">
+				<label class="control-label" for="Status" style="width: 120px;text-align:left;">
+					สถานะ:
+				</label>
+                <div class="controls" style= 'margin-left:120px;'>
+					@Html.DropDownList("Status_Cd", null, new { @disabled = "disabled" })                 
+				</div>
+		</div>
+        <div class="control-group">
+				<label class="control-label" for="Quota_Desc" style="width: 120px;text-align:left;">
+					Online Message:
+				</label>
+				<div class="controls" style= 'margin-left:120px;'>
+					@Html.TextArea("Online_Message", null, new { style = "width:400px;height: 100px;", @readonly = "readonly" })                   
+				</div>
+		</div>
+        <div class="control-group">
+				<label class="control-label" for="Quota_Cd" style="width: 120px;text-align:left;">
+					จำนวนสมาชิก:
+				</label>
+				<div class="controls" style= 'margin-left:120px;'>
+					@Html.TextBox("No_of_Target", null, new { @readonly = "readonly" })                   
+				</div>
+		</div>
+        <div class="control-group">
+				<label class="control-label" for="Quota_Desc" style="width: 120px;text-align:left;">
+					โควต้าแบบพิเศษ:
+				</label>
+				<div class="controls" style= 'margin-left:120px;'>
+					@Html.DropDownList("Special_Quota_Cd", null, new { @disabled = "disabled" })                 
+				</div>
+		</div>
+        
+        <div style="margin-top:20px;text-align:center;width:80%;">
+                @Html.ActionLink("ยกเลิก", "PromotionCodes", "AdminConfig", null,
+                    new
+                    {
+                        @class = "btn btn-primary btn-blue",
+                        style = "padding-left: 0; padding-right: 0;"
+                    })
+        </div>
+    }
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#Start_Dttm').css('width', '80px');
+        $('#End_Dttm').css('width', '80px');
+       
+        $('.ui-datepicker-trigger').css('margin-left', '5px');
+    })
+</script>
+

@@ -1,0 +1,119 @@
+﻿<#+ 
+	string GetStringType(DataColumn col)
+    {
+		var addNullable = col.DataType.ToString() != "System.String" && col.AllowDBNull;
+    	return col.DataType.ToString().Replace("System.","") + (addNullable ? "?" : "");
+   	}
+
+	string PropertyNameRules(string columnName, string entityName = "")
+	{
+		var propertyName = columnName;
+
+		if (IsPascal(propertyName)) {
+			propertyName = ConvertPascalToUnderScore(propertyName); 
+		}
+
+		propertyName = propertyName.ToLower();
+
+		if (!String.IsNullOrEmpty(entityName)) 
+			propertyName = propertyName.Replace(entityName.ToLower(), "");
+
+
+		propertyName = propertyName.Replace("__","_");
+		propertyName = ReplaceKeyword(propertyName, "dept","department");
+		propertyName = ReplaceKeyword(propertyName, "de","description");
+		propertyName = ReplaceKeyword(propertyName, "fl","flag");
+		propertyName = ReplaceKeyword(propertyName, "nm","name");
+		propertyName = ReplaceKeyword(propertyName, "dt","date");
+		propertyName = ReplaceKeyword(propertyName, "nr","number");
+		propertyName = ReplaceKeyword(propertyName, "cd","code");
+		propertyName = ReplaceKeyword(propertyName, "fac","facility");
+		propertyName = ReplaceKeyword(propertyName, "usr","user");
+		propertyName = ReplaceKeyword(propertyName, "pk","");
+
+
+		propertyName = Regex.Replace(propertyName, @"(?:^|_)([a-z])", m => m.Groups[1].Value.ToUpper());
+		return propertyName;
+	}
+
+	string ToCamelCase(string properyName) {
+		if (string.IsNullOrEmpty(properyName)) return ""; 
+		return properyName.Substring(0,1).ToLower() + properyName.Substring(1); 
+	}
+
+	string ConvertPascalToUnderScore(string propertyName)
+    {
+        var result = new System.Text.StringBuilder();
+
+        result.Append(propertyName[0]);
+
+        //-- start with second character
+        for (var i = 1; i < propertyName.Length; i++)
+        {
+            var current = propertyName[i];
+            var prev = propertyName[i - 1];
+
+            if (Char.IsLetter(current) && Char.IsUpper(current))
+            {
+                //-- check if previous character is not upper case or not character
+                result.Append("_" + current);
+                continue;
+
+            }
+
+            result.Append(current);
+
+        }
+        return result.ToString();
+    }
+
+
+	bool IsPascal(string propertyName) 
+    {
+		    //-- check if property name is already in pascal case
+		    //-- always start checking on 2nd character 
+		    var hasUpper = false; 
+		    var hasLower = false; 
+		    for(var i = 1; i < propertyName.Length; i++) 
+            {
+			    if (Char.IsLetter(propertyName[i])) 
+                {
+				    if (Char.IsUpper(propertyName[i])) 
+					    hasUpper = true; 
+                    else 
+					    hasLower = true; 
+				    if (hasUpper && hasLower) return true; 
+			    }
+            }
+
+            return false; 
+	}
+
+	string ReplaceKeyword(string value, string keyword, string replaceWith)
+	{
+        if (value.Contains("_" + keyword + "_"))
+            value = value.Replace("_" + keyword + "_", "_" + replaceWith + "_");
+
+        if (value.EndsWith("_"+keyword))
+            value = value.Substring(0, value.Length-keyword.Length) + replaceWith;
+
+        if (value.StartsWith(keyword + "_"))
+            value = replaceWith + value.Substring(keyword.Length);
+
+        return value;
+	}
+
+	string EntityNameRule(string tableName)
+	{
+		return tableName.Replace("RbT", "")
+			.Replace("RbD", "")
+			.Replace("item","Item");
+	}	
+	
+	string PascalName(string name)
+	{
+		return Regex.Replace(name.ToLower() , @"(?:^|_)([a-z])", m => m.Groups[1].Value.ToUpper());
+	}
+
+
+#>

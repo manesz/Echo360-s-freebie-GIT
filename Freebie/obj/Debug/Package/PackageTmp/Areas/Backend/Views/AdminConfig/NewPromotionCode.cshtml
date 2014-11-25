@@ -1,0 +1,165 @@
+﻿@using Freebie.Libs;
+@model Freebie.Models.PromotionCode
+@{
+    ViewBag.Title = "NewSpecialQuota";
+    ViewBag.PageName = "ตั้งค่า Promotion Code";
+    Layout = "~/Areas/Backend/Views/Shared/_Backend.cshtml";
+    string role_cd = (Session["Role"] == null) ? "" : Session["Role"].ToString();
+    bool has_permission = role_cd.Equals("AM");  
+}
+<div class="backend-table-title">
+	<span>สร้าง Promotion Code</span>   
+</div>
+<div style="margin: 20px 20px 0 20px;">
+    @using (Html.BeginForm("NewPromotionCode", "AdminConfig", FormMethod.Post, new { @id = "backend-special-quota-form", @class = "form-horizontal", style = "width:700px;" }))
+    {
+        if (!Html.ViewData.ModelState.IsValid)
+        {
+                <div class="alert alert-error" style="width:620px;">
+					    @Html.ValidationSummary()           
+                </div>
+                <style>
+                    .field-validation-error 
+                    {
+                        margin-left: 120px;    
+                    }
+                </style>      
+        }
+        
+        <div class="control-group">
+				<label class="control-label" for="Quota_Cd" style="width: 120px;text-align:left;">
+					Promotion Code:
+				</label>
+				<div class="controls" style= 'margin-left:120px;'>
+					@Html.TextBox("Promotion_Code_Value")                   
+				</div>
+		</div>
+        <div class="control-group">
+				<label class="control-label" for="Quota_Desc" style="width: 120px;text-align:left;">
+					คำอธิบาย:
+				</label>
+				<div class="controls" style= 'margin-left:120px;'>
+					@Html.TextArea("Promotion_Desc",null, new { style = "width:400px;height: 100px;" })                   
+				</div>
+		</div>
+        <div class = 'row-fluid'>
+            <div class = 'span5'>
+                <div class="control-group">
+				        <label class="control-label" for="Start_Dttm" style="width: 120px;text-align:left;">
+					        วันที่เริ่มใช้งาน:
+				        </label>
+				        <div class="controls" style= 'margin-left:120px;'>
+					        @Html.TextBox("Start_Dttm",null, new { style = "width:80px;" })                    
+				        </div>
+		        </div>
+            </div>
+            <div class = 'span5'>
+                <div class="control-group">
+				        <label class="control-label" for="End_Dttm" style="width: 120px;text-align:center;">
+					        ถึงวันที่:
+				        </label>
+				        <div class="controls" style= 'margin-left:120px;'>
+					        @Html.TextBox("End_Dttm",null, new { style = "width:80px;" })                       
+				        </div>
+		        </div>
+            </div>
+        </div>
+        <div class="control-group">
+				<label class="control-label" for="Status" style="width: 120px;text-align:left;">
+					สถานะ:
+				</label>
+                <div class="controls" style= 'margin-left:120px;'>
+					  -               
+				</div>
+		</div>
+        <div class="control-group">
+				<label class="control-label" for="Quota_Desc" style="width: 120px;text-align:left;">
+					Online Message:
+				</label>
+				<div class="controls" style= 'margin-left:120px;'>
+					@Html.TextArea("Online_Message", null, new { style = "width:400px;height: 100px;" })                   
+				</div>
+		</div>
+        <div class="control-group">
+				<label class="control-label" for="Quota_Cd" style="width: 120px;text-align:left;">
+					จำนวนสมาชิก:
+				</label>
+				<div class="controls" style= 'margin-left:120px;'>
+					@Html.TextBox("No_of_Target")                   
+				</div>
+		</div>
+        <div class="control-group">
+				<label class="control-label" for="Quota_Desc" style="width: 120px;text-align:left;">
+					โควต้าแบบพิเศษ:
+				</label>
+				<div class="controls" style= 'margin-left:120px;'>
+					@Html.DropDownList("Special_Quota_Cd")                 
+				</div>
+		</div>
+        
+        <div style="margin-top:20px;text-align:center;width:80%;">
+				<input type="submit" id="register-profile-submit" value="บันทึก" class="btn btn-primary btn-blue"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                @Html.ActionLink("ยกเลิก", "PromotionCodes", "AdminConfig", null,
+                    new
+                    {
+                        @class = "btn btn-primary btn-blue",
+                        style = "padding-left: 0; padding-right: 0;"
+                    })
+        </div>
+    }
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#Start_Dttm').css('width', '80px');
+        $('#End_Dttm').css('width', '80px');
+        //var jq = $.noConflict();
+        $.datepicker.regional['th'] = {
+            closeText: 'ปิด',
+            prevText: '&#xAB;&#xA0;ย้อน',
+            nextText: 'ถัดไป&#xA0;&#xBB;',
+            currentText: 'วันนี้',
+            monthNames: ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน',
+		'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'],
+            monthNamesShort: ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.',
+		'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'],
+            dayNames: ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์'],
+            dayNamesShort: ['อา.', 'จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.'],
+            dayNamesMin: ['อา.', 'จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.'],
+            weekHeader: 'Wk',
+            dateFormat: 'dd/mm/yy',
+            firstDay: 0,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['th']);
+        $("#Start_Dttm").datepicker({
+            showOn: "button",
+            dateFormat: "dd/mm/yy",
+            buttonImage: '@Url.Content("~/Images/calendar.gif")',
+            buttonImageOnly: true
+        });
+        $("#End_Dttm").datepicker({
+            showOn: "button",
+            dateFormat: "dd/mm/yy",
+            buttonImage: '@Url.Content("~/Images/calendar.gif")',
+            buttonImageOnly: true
+        });
+
+        $('.ui-datepicker-trigger').css('margin-left', '5px');
+        $("#No_of_Target").keydown(function (event) {
+            if ($.inArray(event.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+            (event.keyCode == 65 && event.ctrlKey === true) ||
+            (event.keyCode >= 35 && event.keyCode <= 39)) {
+                return;
+            }
+            else {
+                if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
+                    event.preventDefault();
+                }
+            }
+        });
+    })
+</script>

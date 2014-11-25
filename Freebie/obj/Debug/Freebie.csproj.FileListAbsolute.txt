@@ -1,0 +1,102 @@
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\Freebie.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\Freebie.pdb
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\Antlr3.Runtime.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\Base32.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\EntityFramework.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\FM.Data.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\HttpCookieEncryption.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\Microsoft.Web.Infrastructure.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\Mvc.Mailer.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\Newtonsoft.Json.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\PagedList.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\PagedList.Mvc.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\Recaptcha.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\Recaptcha.MvcModel.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Net.Http.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Net.Http.Formatting.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Net.Http.WebRequest.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.Helpers.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.Http.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.Http.WebHost.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.Mvc.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.Optimization.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.Providers.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.Razor.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.WebPages.Deployment.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.WebPages.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.WebPages.Razor.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\WebGrease.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\HttpCookieEncryption.xml
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\PagedList.xml
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\PagedList.Mvc.xml
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\Recaptcha.pdb
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\EntityFramework.xml
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\Newtonsoft.Json.xml
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Net.Http.xml
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Net.Http.Formatting.xml
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Net.Http.WebRequest.xml
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.Helpers.xml
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.Http.xml
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.Http.WebHost.xml
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.Mvc.xml
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.Razor.xml
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.WebPages.xml
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.WebPages.Deployment.xml
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.WebPages.Razor.xml
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\obj\Debug\ResolveAssemblyReference.cache
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\obj\Debug\Freebie.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\obj\Debug\Freebie.pdb
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.Abstractions.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\System.Web.Routing.dll
+E:\projects\mvc\freebie-web\FreebieSolution\Freebie\bin\Elmah.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\Freebie.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\Freebie.pdb
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\Antlr3.Runtime.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\Base32.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\Elmah.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\EntityFramework.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\FM.Data.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\HttpCookieEncryption.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\Microsoft.Web.Infrastructure.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\Mvc.Mailer.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\Newtonsoft.Json.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\PagedList.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\PagedList.Mvc.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\Recaptcha.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\Recaptcha.MvcModel.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Net.Http.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Net.Http.Formatting.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Net.Http.WebRequest.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.Abstractions.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.Helpers.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.Http.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.Http.WebHost.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.Mvc.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.Optimization.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.Providers.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.Razor.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.Routing.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.WebPages.Deployment.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.WebPages.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.WebPages.Razor.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\WebGrease.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\HttpCookieEncryption.xml
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\PagedList.xml
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\PagedList.Mvc.xml
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\Recaptcha.pdb
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\EntityFramework.xml
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\Newtonsoft.Json.xml
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Net.Http.xml
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Net.Http.Formatting.xml
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Net.Http.WebRequest.xml
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.Helpers.xml
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.Http.xml
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.Http.WebHost.xml
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.Mvc.xml
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.Razor.xml
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.WebPages.xml
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.WebPages.Deployment.xml
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\bin\System.Web.WebPages.Razor.xml
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\obj\Debug\ResolveAssemblyReference.cache
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\obj\Debug\Freebie.dll
+F:\Echo-Subr_Deploy\SUB-APP\Source Code\Public Source Code_ProdTest\FreebieSolution\Freebie\obj\Debug\Freebie.pdb
